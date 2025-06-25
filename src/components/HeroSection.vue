@@ -19,11 +19,12 @@ function setLang(lang: 'ru' | 'kz') {
       <div class="top-bar">
         <div class="logo-block">
           <img class="logo" src="@/assets/logo.png" alt="logo" />
-          <span class="brand">{{ $t('topbar.logo') }}</span>
+          <span class="brand" v-html="$t('topbar.logo')"></span>
         </div>
         <div class="lang-switch">
-          <button @click="setLang('ru')">Рус</button> |
-          <button @click="setLang('kz')">Қаз</button>
+          <button @click="setLang('ru')" :class="{ active: locale === 'ru' }">Рус</button>
+
+          <button @click="setLang('kz')" :class="{ active: locale === 'kz' }">Қаз</button>
         </div>
       </div>
     </div>
@@ -48,7 +49,7 @@ function setLang(lang: 'ru' | 'kz') {
         <!-- Айбек + bubble stacked vertically -->
         <div class="hero-right">
           <img class="aybek" src="@/assets/aibek.png" alt="Айбек" />
-          <div class="bubble">{{ $t('hero.bubble') }}</div>
+          <div class="bubble" v-html="$t('hero.bubble')"></div>
         </div>
       </div>
       <!-- Desktop arrow -->
@@ -70,7 +71,7 @@ function setLang(lang: 'ru' | 'kz') {
   top: 0;
   left: 0;
   width: 96%;
-  background-color: #fcd34d; /* Adjust to match your yellow */
+  background-color: #fcd34d;
   padding: 1.5rem 3rem;
   z-index: 1000;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -81,9 +82,39 @@ function setLang(lang: 'ru' | 'kz') {
   align-items: center;
 }
 
+.lang-switch {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.lang-switch button {
+  background-color: white;
+  color: #231f20;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  padding: 0.3rem 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.lang-switch button:hover {
+  background-color: #ffe082;
+}
+
+.lang-switch button.active {
+  background-color: #e53935;
+  color: white;
+  border-color: white;
+  font-weight: 700;
+}
+
 /* === GENERAL STYLES === */
 .hero-section {
-  background-image: url('@/assets/bg.png');
+  /* background-image: url('@/assets/bg.png'); */
   background-size: cover;
   background-position: center;
   min-height: 100vh;

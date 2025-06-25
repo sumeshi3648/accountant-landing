@@ -19,6 +19,12 @@ import Footer from './components/Footer.vue'
 body {
   margin: 0;
   font-family: 'Nunito', sans-serif;
-  background-color: #f7c53b;
+  background-image: url('@/assets/bg-desktop.png');
+}
+
+@media (max-width: 768px) {
+  body {
+    background-image: url('@/assets/bg-mobile.png');
+  }
 }
 </style>

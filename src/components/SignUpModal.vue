@@ -1,14 +1,14 @@
 <template>
   <div class="modal-backdrop" @click.self="close">
     <div class="modal">
-      <h2>Записаться</h2>
+      <h2>{{ $t('signup.title') }}</h2>
       <form @submit.prevent="submitForm">
-        <input v-model="form.name" placeholder="Имя" required />
-        <input v-model="form.phone" placeholder="Телефон" required />
-        <textarea v-model="form.description" placeholder="Краткое описание проблемы"></textarea>
-        <button type="submit">Отправить</button>
+        <input v-model="form.name" :placeholder="$t('signup.name')" required />
+        <input v-model="form.phone" :placeholder="$t('signup.phone')" required />
+        <textarea v-model="form.description" :placeholder="$t('signup.description')"></textarea>
+        <button type="submit">{{ $t('signup.button') }}</button>
       </form>
-      <p v-if="success" class="success-message">Мы свяжемся с вами в ближайшее время!</p>
+      <p v-if="success" class="success-message">{{ $t('signup.success') }}</p>
     </div>
   </div>
 </template>
@@ -44,7 +44,7 @@ const submitForm = async () => {
     success.value = true
     setTimeout(close, 1000)
   } catch (e) {
-    console.error('Ошибка при отправке. Попробуйте снова.', e)
+    console.error(t('signup.error'), e)
   }
 }
 </script>

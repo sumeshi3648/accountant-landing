@@ -3,7 +3,7 @@
     <!-- Main CTA block -->
     <div class="cta-wrapper">
       <p class="cta-title">{{ $t('video') }}</p>
-      <div class="bubble">{{ $t('videoBtn') }}</div>
+      <div class="bubble" v-html="$t('videoBtn')"></div>
     </div>
 
     <!-- Actual Video -->
