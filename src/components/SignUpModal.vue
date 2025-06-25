@@ -103,4 +103,29 @@ const submitForm = async () => {
   text-align: center;
   margin-top: 1rem;
 }
+
+@media (max-width: 400px) {
+  .modal {
+    padding: 1.5rem 1rem;
+  }
+
+  .modal h2 {
+    font-size: 1.4rem;
+  }
+
+  .modal input,
+  .modal textarea {
+    padding-block: 0.6rem;
+    font-size: 0.9rem;
+  }
+
+  .modal button {
+    padding: 0.8rem;
+    font-size: 1rem;
+  }
+
+  .success-message {
+    font-size: 1rem;
+  }
+}
 </style>

@@ -29,7 +29,7 @@
 .cta-wrapper {
   margin-top: 4rem;
   margin-bottom: 3rem;
-  margin-left: 8rem;
+  margin-left: 4rem;
   display: flex;
   flex-direction: column;
 }
@@ -110,6 +110,33 @@
     max-width: 360px;
     height: 560px;
     margin: 2rem auto;
+  }
+}
+@media (max-width: 400px) {
+  .video-section {
+    padding: 1rem 0.8rem 4rem;
+  }
+
+  .cta-wrapper {
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    margin-left: 0;
+  }
+
+  .cta-title {
+    font-size: 1.6rem;
+  }
+
+  .bubble {
+    font-size: 1.3rem;
+    padding: 1rem 2.5rem;
+    margin-left: 0;
+  }
+
+  .actual-video {
+    width: 100%;
+    max-width: 320px;
+    height: 400px;
   }
 }
 </style>

@@ -111,4 +111,24 @@
     align-items: center;
   }
 }
+
+@media (max-width: 400px) {
+  .footer {
+    padding: 1.5rem 1.2rem;
+  }
+
+  .brand-name {
+    font-size: 1.1rem;
+  }
+
+  .footer-right p,
+  .footer-right a {
+    font-size: 0.9rem;
+  }
+
+  .icon {
+    width: 24px;
+    height: 24px;
+  }
+}
 </style>

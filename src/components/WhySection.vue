@@ -130,4 +130,31 @@
     flex: 1;
   }
 }
+
+@media (max-width: 400px) {
+  .why-section {
+    padding: 1.2rem 1rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .card {
+    padding: 1.5rem 1rem;
+  }
+
+  .circle {
+    width: 50px;
+    height: 50px;
+    font-size: 1.4rem;
+  }
+
+  .card p {
+    font-size: 1.2rem;
+    padding-left: 0.8rem;
+    font-weight: 500;
+  }
+}
 </style>

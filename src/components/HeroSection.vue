@@ -328,4 +328,64 @@ function setLang(lang: 'ru' | 'kz') {
     display: block;
   }
 }
+
+@media (max-width: 480px) {
+  .topbar-wrapper {
+    padding: 1rem 1.2rem;
+  }
+
+  .logo {
+    width: 24px;
+  }
+
+  .brand {
+    font-size: 0.9rem;
+  }
+
+  .lang-switch {
+    font-size: 0.9rem;
+    margin-right: 1.2rem;
+  }
+
+  .hero-content-container {
+    padding: 0 0.6rem;
+  }
+
+  .hero-left {
+    margin-top: 1rem;
+  }
+
+  .title {
+    font-size: 2.1rem;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+    margin: 0.4rem 0;
+  }
+
+  .cta-button {
+    font-size: 1rem;
+    padding: 0.7rem 1.6rem;
+  }
+
+  .aybek {
+    width: 180px;
+  }
+
+  .bubble {
+    font-size: 1rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .vertical-arrow {
+    width: 60px;
+    margin-top: 8rem;
+  }
+
+  .curve-arrow {
+    width: 160px;
+    margin-top: 0.3rem;
+  }
+}
 </style>
