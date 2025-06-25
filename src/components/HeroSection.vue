@@ -6,7 +6,7 @@ import SignUpModal from './SignUpModal.vue'
 const showModal = ref(false)
 const { locale } = useI18n()
 
-function setLang(lang) {
+function setLang(lang: 'ru' | 'kz') {
   locale.value = lang
   localStorage.setItem('lang', lang)
 }
