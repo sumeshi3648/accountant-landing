@@ -25,10 +25,16 @@ const close = () => emit('close')
 
 const submitForm = async () => {
   try {
-    await fetch('https://script.google.com/macros/s/YOUR_DEPLOYED_SCRIPT_ID/exec', {
-      method: 'POST',
-      body: new URLSearchParams(form.value),
-    })
+    await fetch(
+      'https://script.google.com/macros/s/AKfycby_2asNvuTH3St6SUEvTrQ5wTOP54hxsOTL9_liLAmBlyfL8QovEzXTh-UbHypUmrmvWw/exec',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: new URLSearchParams(form.value),
+      },
+    )
     success.value = true
     setTimeout(close, 2000)
   } catch (e) {
@@ -62,10 +68,12 @@ const submitForm = async () => {
   display: block;
   width: 100%;
   margin-bottom: 1rem;
-  padding: 0.8rem;
+  padding-block: 0.8rem;
   border-radius: 8px;
   border: 1px solid #ccc;
+  padding-inline: 0.2rem;
 }
+
 .modal button {
   background-color: #e53935;
   color: white;
