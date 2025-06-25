@@ -1,21 +1,21 @@
 <template>
   <section class="why-section">
     <!-- Section Title -->
-    <h2 class="section-title">ЗАЧЕМ Я НУЖЕН ДЛЯ ТВОЕГО БИЗНЕСА?</h2>
+    <h2 class="section-title">{{ $t('why.title') }}</h2>
 
     <!-- Benefits Grid -->
     <div class="benefits">
       <div class="card">
         <div class="circle">1</div>
-        <p>Объясню все подводные камни бухгалтерии на личной встрече</p>
+        <p>{{ $t('why.points.0') }}</p>
       </div>
       <div class="card">
         <div class="circle">2</div>
-        <p>Срежу твои налоги в 2 РАЗА по-белому</p>
+        <p>{{ $t('why.points.1') }}</p>
       </div>
       <div class="card">
         <div class="circle">3</div>
-        <p>Сам буду представлять твои интересы в налоговой</p>
+        <p>{{ $t('why.points.2') }}</p>
       </div>
     </div>
   </section>

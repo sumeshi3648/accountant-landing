@@ -8,7 +8,7 @@
         <textarea v-model="form.description" placeholder="Краткое описание проблемы"></textarea>
         <button type="submit">Отправить</button>
       </form>
-      <p v-if="success" class="success-message">✅ Успешно отправлено!</p>
+      <p v-if="success" class="success-message">Мы свяжемся с вами в ближайшее время!</p>
     </div>
   </div>
 </template>
@@ -25,6 +25,7 @@ const close = () => emit('close')
 
 const submitForm = async () => {
   try {
+    success.value = true
     await fetch(
       'https://script.google.com/macros/s/AKfycby_2asNvuTH3St6SUEvTrQ5wTOP54hxsOTL9_liLAmBlyfL8QovEzXTh-UbHypUmrmvWw/exec',
       {
@@ -35,10 +36,15 @@ const submitForm = async () => {
         body: new URLSearchParams(form.value),
       },
     )
+    if (!response.ok) throw new Error('Network response was not OK')
+
+    const result = await response.json()
+    console.log('Success:', result)
+
     success.value = true
-    setTimeout(close, 2000)
+    setTimeout(close, 1000)
   } catch (e) {
-    alert('Ошибка при отправке. Попробуйте снова.')
+    console.error('Ошибка при отправке. Попробуйте снова.', e)
   }
 }
 </script>
@@ -83,6 +89,15 @@ const submitForm = async () => {
   width: 100%;
   font-weight: bold;
 }
+
+.modal button:hover {
+  background-color: #c62828;
+}
+
+.modal button:active {
+  transform: scale(0.97); /* slightly smaller on press */
+}
+
 .success-message {
   color: green;
   text-align: center;

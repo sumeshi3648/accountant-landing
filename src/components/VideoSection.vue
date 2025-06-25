@@ -2,8 +2,8 @@
   <section class="video-section">
     <!-- Main CTA block -->
     <div class="cta-wrapper">
-      <p class="cta-title">Посмотри на себя</p>
-      <div class="bubble">тыкни на<br />ролик</div>
+      <p class="cta-title">{{ $t('video') }}</p>
+      <div class="bubble">{{ $t('videoBtn') }}</div>
     </div>
 
     <!-- Actual Video -->

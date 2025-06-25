@@ -1,8 +1,15 @@
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue'
+import { useI18n } from 'vue-i18n'
 import SignUpModal from './SignUpModal.vue'
 
 const showModal = ref(false)
+const { locale } = useI18n()
+
+function setLang(lang) {
+  locale.value = lang
+  localStorage.setItem('lang', lang)
+}
 </script>
 
 <template>
@@ -12,9 +19,12 @@ const showModal = ref(false)
       <div class="top-bar">
         <div class="logo-block">
           <img class="logo" src="@/assets/logo.png" alt="logo" />
-          <span class="brand">Твой нормальный<br />бухгалтер</span>
+          <span class="brand">{{ $t('topbar.logo') }}</span>
         </div>
-        <div class="lang-switch">Рус | Қаз</div>
+        <div class="lang-switch">
+          <button @click="setLang('ru')">Рус</button> |
+          <button @click="setLang('kz')">Қаз</button>
+        </div>
       </div>
     </div>
 
@@ -23,13 +33,13 @@ const showModal = ref(false)
       <div class="hero-content">
         <!-- Text and buttons -->
         <div class="hero-left">
-          <h1 class="title">САЙТ АЙБЕКА</h1>
+          <h1 class="title">{{ $t('hero.title') }}</h1>
           <p class="subtitle">
-            ТОТ, КТО СДАЕТ ЗА ТЕБЯ ВСЕ ОТЧЕТЫ И БЕРЕТ НА СЕБЯ ВЕСЬ ДОКУМЕНТООБОРОТ — БЕЗ КОСЯКОВ.
+            {{ $t('hero.subtitle') }}
           </p>
 
           <div class="buttons">
-            <button class="cta-button" @click="showModal = true">Записаться</button>
+            <button class="cta-button" @click="showModal = true">{{ $t('hero.button') }}</button>
             <SignUpModal v-if="showModal" @close="showModal = false" />
             <!-- Decorative arrow image pointing from bubble to button -->
           </div>
@@ -38,7 +48,7 @@ const showModal = ref(false)
         <!-- Айбек + bubble stacked vertically -->
         <div class="hero-right">
           <img class="aybek" src="@/assets/aibek.png" alt="Айбек" />
-          <div class="bubble">Объясню все что нужно<br />вести для белой бухгалтерии</div>
+          <div class="bubble">{{ $t('hero.bubble') }}</div>
         </div>
       </div>
       <!-- Desktop arrow -->
