@@ -21,10 +21,15 @@ function setLang(lang: 'ru' | 'kz') {
           <img class="logo" src="@/assets/logo.png" alt="logo" />
           <span class="brand" v-html="$t('topbar.logo')"></span>
         </div>
-        <div class="lang-switch">
-          <button @click="setLang('ru')" :class="{ active: locale === 'ru' }">Рус</button>
+        <div class="right-side-top-bar">
+          <div class="lang-switch">
+            <button @click="setLang('ru')" :class="{ active: locale === 'ru' }">Рус</button>
 
-          <button @click="setLang('kz')" :class="{ active: locale === 'kz' }">Қаз</button>
+            <button @click="setLang('kz')" :class="{ active: locale === 'kz' }">Қаз</button>
+          </div>
+          <p>
+            <a href="tel:+87074766187">+7 707 476 61 87</a>
+          </p>
         </div>
       </div>
     </div>
@@ -76,6 +81,15 @@ function setLang(lang: 'ru' | 'kz') {
   z-index: 1000;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+.right-side-top-bar {
+  display: flex;
+  flex-direction: column;
+}
+
+.right-side-top-bar p {
+  font-size: 1.1rem;
+}
+
 .hero-content-container {
   display: flex;
   flex-direction: column;
@@ -329,9 +343,13 @@ function setLang(lang: 'ru' | 'kz') {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 500px) {
   .topbar-wrapper {
     padding: 1rem 1.2rem;
+  }
+
+  .right-side-top-bar p {
+    font-size: 0.7rem;
   }
 
   .logo {
@@ -365,7 +383,7 @@ function setLang(lang: 'ru' | 'kz') {
   }
 
   .cta-button {
-    font-size: 1rem;
+    font-size: 1.3rem;
     padding: 0.7rem 1.6rem;
   }
 

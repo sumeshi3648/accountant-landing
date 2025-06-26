@@ -21,9 +21,6 @@
           <a href="https://wa.me/77074766187" target="_blank" aria-label="WhatsApp">
             <img src="@/assets/whatsapp.png" alt="WhatsApp" class="icon" />
           </a>
-          <a href="https://instagram.com/yourprofile" target="_blank" aria-label="Instagram">
-            <img src="@/assets/instagram.png" alt="Instagram" class="icon" />
-          </a>
         </div>
       </div>
     </div>

@@ -11,6 +11,12 @@
       <source src="@/assets/video.MOV" type="video/mp4" />
       Ваш браузер не поддерживает видео.
     </video>
+
+    <div class="buttons">
+      <button class="cta-button" @click="showModal = true">{{ $t('hero.button') }}</button>
+      <SignUpModal v-if="showModal" @close="showModal = false" />
+      <!-- Decorative arrow image pointing from bubble to button -->
+    </div>
   </section>
 </template>
 
@@ -32,6 +38,18 @@
   margin-left: 4rem;
   display: flex;
   flex-direction: column;
+}
+
+.cta-button {
+  background-color: #e53935;
+  color: white;
+  font-weight: bold;
+  padding: 1rem 2.5rem;
+  border: 4px solid white;
+  border-radius: 100px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  width: fit-content;
 }
 
 .cta-title {
@@ -112,7 +130,15 @@
     margin: 2rem auto;
   }
 }
-@media (max-width: 400px) {
+
+@media (max-width: 768px) {
+  .cta-button {
+    font-size: 1.4rem;
+    padding: 1rem 2rem;
+  }
+}
+
+@media (max-width: 500px) {
   .video-section {
     padding: 1rem 0.8rem 4rem;
   }
@@ -125,6 +151,11 @@
 
   .cta-title {
     font-size: 1.6rem;
+  }
+
+  .cta-button {
+    font-size: 1.3rem;
+    padding: 0.7rem 1.6rem;
   }
 
   .bubble {
