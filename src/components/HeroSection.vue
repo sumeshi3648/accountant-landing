@@ -28,7 +28,7 @@ function setLang(lang: 'ru' | 'kz') {
             <button @click="setLang('kz')" :class="{ active: locale === 'kz' }">Қаз</button>
           </div>
           <p>
-            <a href="tel:+87074766187">+7 707 476 61 87</a>
+            <a class="phone-link" href="tel:+77074767187">📞 +7 (707) 476 71 87</a>
           </p>
         </div>
       </div>
@@ -71,6 +71,23 @@ function setLang(lang: 'ru' | 'kz') {
 </template>
 
 <style scoped>
+.phone-link {
+  display: inline-block;
+  background-color: #e53935;
+  color: white;
+  border: 2px solid white;
+  border-radius: 30px;
+  padding: 0.4rem 1rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.phone-link:hover {
+  background-color: #d32f2f;
+}
+
 .topbar-wrapper {
   position: fixed;
   top: 0;
@@ -83,11 +100,10 @@ function setLang(lang: 'ru' | 'kz') {
 }
 .right-side-top-bar {
   display: flex;
-  flex-direction: column;
-}
-
-.right-side-top-bar p {
-  font-size: 1.1rem;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  margin-right: 2rem;
 }
 
 .hero-content-container {
@@ -100,8 +116,6 @@ function setLang(lang: 'ru' | 'kz') {
   display: flex;
   gap: 0.4rem;
   align-items: center;
-  font-size: 1.1rem;
-  font-weight: 600;
 }
 
 .lang-switch button {
@@ -109,10 +123,11 @@ function setLang(lang: 'ru' | 'kz') {
   color: #231f20;
   border: 2px solid transparent;
   border-radius: 20px;
-  padding: 0.3rem 0.9rem;
+  padding: 0.4rem 1rem;
   cursor: pointer;
   transition: all 0.2s ease;
-  font-family: inherit;
+  font-weight: 600;
+  font-size: 0.9rem;
 }
 
 .lang-switch button:hover {
@@ -161,12 +176,6 @@ function setLang(lang: 'ru' | 'kz') {
   font-size: 1.3rem;
   font-weight: 700;
   line-height: 1.2;
-}
-
-.lang-switch {
-  font-size: 1.2rem;
-  font-weight: 500;
-  margin-right: 2rem;
 }
 
 /* === MAIN CONTENT === */
@@ -233,7 +242,7 @@ function setLang(lang: 'ru' | 'kz') {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  margin-top: -80px; /* Raise whole column upward */
+  margin-top: -40px; /* Raise whole column upward */
 }
 
 .aybek {
@@ -259,6 +268,9 @@ function setLang(lang: 'ru' | 'kz') {
     align-items: flex-start;
     gap: 1rem;
   }
+  .phone-link {
+    font-size: 0.8rem;
+  }
 
   .brand {
     font-size: 1rem;
@@ -266,14 +278,23 @@ function setLang(lang: 'ru' | 'kz') {
     line-height: 1.2;
   }
 
+  .right-side-top-bar {
+    flex-direction: column;
+    align-items: center;
+    margin-right: 2rem;
+    gap: 0;
+    justify-content: flex-end;
+  }
+
   .lang-switch {
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-weight: 500;
     margin-right: 2.8rem;
   }
 
   .hero-content-container {
     flex-direction: row;
+    padding-left: 100px;
   }
 
   .hero-content {
@@ -344,14 +365,21 @@ function setLang(lang: 'ru' | 'kz') {
 }
 
 @media (max-width: 500px) {
+  .hero-section {
+    padding-bottom: 0;
+  }
   .topbar-wrapper {
     padding: 1rem 1.2rem;
   }
-
-  .right-side-top-bar p {
-    font-size: 0.7rem;
+  .phone-link {
+    font-size: 0.6rem;
   }
 
+  .lang-switch {
+    font-size: 0.6rem;
+    font-weight: 500;
+    margin-right: 2.8rem;
+  }
   .logo {
     width: 24px;
   }
@@ -360,13 +388,9 @@ function setLang(lang: 'ru' | 'kz') {
     font-size: 0.9rem;
   }
 
-  .lang-switch {
-    font-size: 0.9rem;
-    margin-right: 1.2rem;
-  }
-
   .hero-content-container {
     padding: 0 0.6rem;
+    padding-left: 40px;
   }
 
   .hero-left {
@@ -404,6 +428,11 @@ function setLang(lang: 'ru' | 'kz') {
   .curve-arrow {
     width: 160px;
     margin-top: 0.3rem;
+  }
+}
+@media (max-width: 360px) {
+  .hero-content-container {
+    padding-left: 20px;
   }
 }
 </style>

@@ -11,14 +11,14 @@
       <div class="footer-right">
         <p>
           Телефон:
-          <a href="tel:+87074766187">+7 707 476 61 87</a>
+          <a href="tel:+77074767187">+7 (707) 476 71 87</a>
         </p>
         <p>
           Email:
           <a href="mailto:salimbaevajbek5@gmail.com">salimbaevajbek5@gmail.com</a>
         </p>
         <div class="social-icons">
-          <a href="https://wa.me/77074766187" target="_blank" aria-label="WhatsApp">
+          <a href="https://wa.me/77074767187" target="_blank" aria-label="WhatsApp">
             <img src="@/assets/whatsapp.png" alt="WhatsApp" class="icon" />
           </a>
         </div>

@@ -26,7 +26,7 @@
   background-size: cover;
   background-position: center;
   align-items: center;
-  padding: 3rem 3rem;
+  padding-inline: 3rem;
   color: #231f20;
 }
 

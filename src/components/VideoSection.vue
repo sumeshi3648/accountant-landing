@@ -1,8 +1,23 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import SignUpModal from './SignUpModal.vue'
 
 const showModal = ref(false)
+
+const { locale } = useI18n()
+
+const videoSrc = computed(() =>
+  locale.value === 'kz'
+    ? new URL('@/assets/video-kaz.MOV', import.meta.url).href
+    : new URL('@/assets/video.MOV', import.meta.url).href,
+)
+
+const posterSrc = computed(() =>
+  locale.value === 'kz'
+    ? new URL('@/assets/thumbnail-kaz.png', import.meta.url).href
+    : new URL('@/assets/thumbnail.png', import.meta.url).href,
+)
 </script>
 
 <template>
@@ -19,8 +34,8 @@ const showModal = ref(false)
     </div>
 
     <!-- Actual Video -->
-    <video class="actual-video" controls playsinline poster="@/assets/thumbnail.png">
-      <source src="@/assets/video.MOV" type="video/mp4" />
+    <video class="actual-video" controls playsinline :poster="posterSrc">
+      <source :src="videoSrc" type="video/mp4" />
       Ваш браузер не поддерживает видео.
     </video>
 
@@ -43,6 +58,11 @@ const showModal = ref(false)
   align-items: flex-start;
 }
 
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+
 /* === CTA === */
 .cta-wrapper {
   margin-top: 4rem;
@@ -53,7 +73,7 @@ const showModal = ref(false)
 }
 
 .cta-button {
-  margin-top: 2rem;
+  margin-top: 6rem;
   background-color: #e53935;
   color: white;
   font-weight: bold;
