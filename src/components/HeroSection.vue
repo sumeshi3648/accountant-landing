@@ -92,7 +92,7 @@ function setLang(lang: 'ru' | 'kz') {
   position: fixed;
   top: 0;
   left: 0;
-  width: 96%;
+  width: 85%;
   background-color: #fcd34d;
   padding: 1.5rem 3rem;
   z-index: 1000;
@@ -242,7 +242,7 @@ function setLang(lang: 'ru' | 'kz') {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  margin-top: -40px; /* Raise whole column upward */
+  margin-top: -80px; /* Raise whole column upward */
 }
 
 .aybek {
@@ -281,7 +281,7 @@ function setLang(lang: 'ru' | 'kz') {
   .right-side-top-bar {
     flex-direction: column;
     align-items: center;
-    margin-right: 2rem;
+    margin-right: 3rem;
     gap: 0;
     justify-content: flex-end;
   }
@@ -366,7 +366,7 @@ function setLang(lang: 'ru' | 'kz') {
 
 @media (max-width: 500px) {
   .hero-section {
-    padding-bottom: 0;
+    padding-bottom:;
   }
   .topbar-wrapper {
     padding: 1rem 1.2rem;
@@ -376,12 +376,20 @@ function setLang(lang: 'ru' | 'kz') {
   }
 
   .lang-switch {
+    margin-right: 0rem;
+  }
+  .lang-switch button {
     font-size: 0.6rem;
     font-weight: 500;
-    margin-right: 2.8rem;
   }
   .logo {
     width: 24px;
+  }
+  .right-side-top-bar {
+    margin-right: 2rem;
+  }
+  .right-side-top-bar p {
+    margin: 4px;
   }
 
   .brand {
@@ -430,9 +438,19 @@ function setLang(lang: 'ru' | 'kz') {
     margin-top: 0.3rem;
   }
 }
+
+@media (max-width: 410px) {
+  .lang-switch button {
+    font-size: 0.5rem;
+    font-weight: 500;
+  }
+  .phone-link {
+    font-size: 0.5rem;
+  }
+}
 @media (max-width: 360px) {
   .hero-content-container {
-    padding-left: 20px;
+    padding-left: 8px;
   }
 }
 </style>
