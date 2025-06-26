@@ -1,9 +1,21 @@
+<script setup lang="ts">
+import { ref } from 'vue'
+import SignUpModal from './SignUpModal.vue'
+
+const showModal = ref(false)
+</script>
+
 <template>
   <section class="video-section">
     <!-- Main CTA block -->
     <div class="cta-wrapper">
       <p class="cta-title">{{ $t('video') }}</p>
       <div class="bubble" v-html="$t('videoBtn')"></div>
+      <div class="buttons">
+        <button class="cta-button" @click="showModal = true">{{ $t('hero.button') }}</button>
+        <SignUpModal v-if="showModal" @close="showModal = false" />
+        <!-- Decorative arrow image pointing from bubble to button -->
+      </div>
     </div>
 
     <!-- Actual Video -->
@@ -13,7 +25,7 @@
     </video>
 
     <div class="buttons">
-      <button class="cta-button" @click="showModal = true">{{ $t('hero.button') }}</button>
+      <button class="cta-button-small" @click="showModal = true">{{ $t('hero.button') }}</button>
       <SignUpModal v-if="showModal" @close="showModal = false" />
       <!-- Decorative arrow image pointing from bubble to button -->
     </div>
@@ -41,15 +53,20 @@
 }
 
 .cta-button {
+  margin-top: 2rem;
   background-color: #e53935;
   color: white;
   font-weight: bold;
   padding: 1rem 2.5rem;
   border: 4px solid white;
   border-radius: 100px;
-  font-size: 1.2rem;
+  font-size: 2rem;
   cursor: pointer;
   width: fit-content;
+}
+
+.cta-button-small {
+  display: none;
 }
 
 .cta-title {
@@ -107,6 +124,23 @@
     flex-direction: column;
   }
 
+  .cta-button {
+    display: none;
+  }
+
+  .cta-button-small {
+    background-color: #e53935;
+    display: block;
+    color: white;
+    font-weight: bold;
+    padding: 1rem 2.5rem;
+    border: 4px solid white;
+    border-radius: 100px;
+    font-size: 1.4rem;
+    cursor: pointer;
+    width: fit-content;
+  }
+
   .cta-wrapper {
     text-align: center;
     margin-top: 2rem;
@@ -128,13 +162,6 @@
     max-width: 360px;
     height: 560px;
     margin: 2rem auto;
-  }
-}
-
-@media (max-width: 768px) {
-  .cta-button {
-    font-size: 1.4rem;
-    padding: 1rem 2rem;
   }
 }
 

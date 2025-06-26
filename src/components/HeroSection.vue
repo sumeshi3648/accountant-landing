@@ -210,7 +210,7 @@ function setLang(lang: 'ru' | 'kz') {
   padding: 1rem 2.5rem;
   border: 4px solid white;
   border-radius: 100px;
-  font-size: 1.2rem;
+  font-size: 2rem;
   cursor: pointer;
   width: fit-content;
 }
