@@ -92,7 +92,7 @@ function setLang(lang: 'ru' | 'kz') {
   position: fixed;
   top: 0;
   left: 0;
-  width: 85%;
+  width: 95%;
   background-color: #fcd34d;
   padding: 1.5rem 3rem;
   z-index: 1000;
@@ -242,7 +242,6 @@ function setLang(lang: 'ru' | 'kz') {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  margin-top: -80px; /* Raise whole column upward */
 }
 
 .aybek {
@@ -267,6 +266,9 @@ function setLang(lang: 'ru' | 'kz') {
     flex-direction: row;
     align-items: flex-start;
     gap: 1rem;
+  }
+  .topbar-wrapper {
+    padding-bottom: 0.3rem;
   }
   .phone-link {
     font-size: 0.8rem;
