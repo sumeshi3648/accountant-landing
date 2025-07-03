@@ -9,8 +9,8 @@ const { locale } = useI18n()
 
 const videoSrc = computed(() =>
   locale.value === 'kz'
-    ? new URL('@/assets/video-kaz.MOV', import.meta.url).href
-    : new URL('@/assets/video.MOV', import.meta.url).href,
+    ? 'https://github.com/sumeshi3648/accountant-landing/releases/download/v1-videos/video-kaz.MOV'
+    : 'https://github.com/sumeshi3648/accountant-landing/releases/download/v1-videos/video.MOV',
 )
 
 const posterSrc = computed(() =>
